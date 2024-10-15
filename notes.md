@@ -74,3 +74,5 @@ This is an Evaluated expression in file 01vitereact/src/App.jsx
 ```js
     <p>Hello miss {username}</p>
 ```
+
+To control the variable in ui updation used mutiple times we use React methods AKA hooks
