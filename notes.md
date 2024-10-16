@@ -76,3 +76,29 @@ This is an Evaluated expression in file 01vitereact/src/App.jsx
 ```
 
 To control the variable in ui updation used mutiple times we use React methods AKA hooks
+
+### Virtual DOM
+create root make a DOM-like structure
+
+[React Fiber link](https://github.com/acdlite/react-fiber-architecture)
+- React uses react-fiber algorithm behind the scenes to update the virtual dom
+- FEATURES : 
+-  **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
+- the ability to pause, abort, or reuse work as new updates come in; 
+- the ability to assign priority to different types of updates; and new concurrency primitives.
+
+Reconciliation:
+
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+**update**
+
+A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render
+
+- Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+
+### Tailwind and Props
+- Add the card component from tailwind in App.jsx
+- Props makes a component reusable -> card once made , keep it in a componenet to reuse
+    - Make a folder named components fo ryour componenet file like a Card.jsx in src folder
+    - Use a loop with that component if you need that card for multiple items whose info came from an array or a database, these are done by props.
