@@ -102,3 +102,40 @@ A change in the data used to render a React app. Usually the result of `setState
 - Props makes a component reusable -> card once made , keep it in a componenet to reuse
     - Make a folder named components fo ryour componenet file like a Card.jsx in src folder
     - Use a loop with that component if you need that card for multiple items whose info came from an array or a database, these are done by props.
+
+
+```bash
+npm create vite@latest
+cd <project-name>
+npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+- got a new file named tailwind.config.js
+
+- **[Use resource](https://tailwindcss.com/docs/guides/vite)** to set up after this step.
+
+```bash
+npm run dev
+```
+
+### Interview Question React
+- In counter project
+- use mutiple 
+```jsx
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+```
+the answer still doesn't show abnormal behavior
+- Becuase of useState() function as we send the info in batches and the control on fiber diff algorithm is better
+- if you want to do the same work as the code the soln is
+```jsx
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
+```
+
+### Background Color Changer using react & tailwind
