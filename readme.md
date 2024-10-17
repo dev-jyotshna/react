@@ -139,3 +139,9 @@ the answer still doesn't show abnormal behavior
 ```
 
 ### Background Color Changer using react & tailwind
+
+### Password generator project
+- This uses memoization to optimize itself
+- useCallback is a React Hook that lets you cache a function definition between re-renders.
+useCallback(fn, dependencies) 
+dependeancy every const that rerenders the password
