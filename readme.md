@@ -145,3 +145,4 @@ the answer still doesn't show abnormal behavior
 - useCallback is a React Hook that lets you cache a function definition between re-renders.
 useCallback(fn, dependencies) 
 dependeancy every const that rerenders the password
+- use useCallback do when passwordGenerator() is direcly called , react limits no. of renders to prevent an infinite loop.
