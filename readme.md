@@ -145,4 +145,8 @@ the answer still doesn't show abnormal behavior
 - useCallback is a React Hook that lets you cache a function definition between re-renders.
 useCallback(fn, dependencies) 
 dependeancy every const that rerenders the password
-- use useCallback do when passwordGenerator() is direcly called , react limits no. of renders to prevent an infinite loop.
+- use useCallback do when passwordGenerator() is direcly called , react limits no. of renders to prevent an infinite loop. 
+    - useCallback() memorizes the function as much as possible.
+    - useCallback() will return a memoized version of the callback that only changes if one of the inputs has changed.
+- use useEffect is called first time when the page is loaded or when an effect takes place by any change in dependency array.
+- use useRef hook when you need to use a reference.

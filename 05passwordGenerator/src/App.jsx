@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     passwordGenerator()
   }, [length, numberAllowed, characterAllowed, passwordGenerator])
-  
+
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0, 999)
@@ -49,7 +49,7 @@ function App() {
           />
           <button 
           onClick={copyPasswordToClipboard}
-          className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>copy</button>
+          className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 '>copy</button>
         </div>
         <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'>
