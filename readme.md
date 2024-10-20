@@ -150,3 +150,12 @@ dependeancy every const that rerenders the password
     - useCallback() will return a memoized version of the callback that only changes if one of the inputs has changed.
 - use useEffect is called first time when the page is loaded or when an effect takes place by any change in dependency array.
 - use useRef hook when you need to use a reference.
+
+### Currency convertor project
+- when the custom hook is used/ is loaded then api is called to get some data
+
+```js
+let url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json"
+```
+
+- json file data when gets return in string datatype
