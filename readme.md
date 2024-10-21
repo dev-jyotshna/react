@@ -159,3 +159,6 @@ let url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/curr
 ```
 
 - json file data when gets return in string datatype
+- remember the eky in loops in React
+- `useId` is a React Hook for generating unique IDs that can be passed to accessibility attributes.
+    - Do not call useId to generate keys in a list
