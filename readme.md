@@ -162,3 +162,73 @@ let url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/curr
 - remember the eky in loops in React
 - `useId` is a React Hook for generating unique IDs that can be passed to accessibility attributes.
     - Do not call useId to generate keys in a list
+
+### React router DOM
+- react router dom is a third party library
+- instead of using `<a>` tag we use `Link` in react using react-router-dom as `<a>` tag reloads/refreshes the site instead of manipulating the dom itself as we inject the tags in the nodes directly.
+- `NavLink` provides additional things -> instead of href in a we use to=""
+- use callback function in className with backticks when you need to change classes, Home(about, Contact, Github) highlight , using variable isActive => matches with the url
+
+- Create Router in Two Ways
+    1. 
+    ```jsx
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <Layout/>,
+            children: [
+            {
+                path: "",
+                element: <Home />
+            },
+            {
+                path: "about",
+                element: <About />
+            },
+            {
+                path: "contact",
+                element: <Contact />
+            }
+            ]
+        }
+        ])
+    ```
+
+    2. 
+    ```jsx
+        const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path='/' element={<Layout />}>
+            <Route path='' element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+            </Route>
+        )
+        )
+
+    ```
+
+- Outlet from react-router-dom uses Layout as a base and changes only where the outlet tag is used
+
+#### Bug
+```jsx
+<NavLink to="/about"
+className={({isActive}) =>
+    `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+}
+```
+INSTEAD OF
+```jsx
+<NavLink to="/about"
+className={(isActive) => //the missing of {} around isActive gave the error 
+    `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+}
+```
+#### UseParams to use userid into the page
+```jsx
+import { useParams } from "react-router-dom";
+
+```
+
+- This optimization given by the react-router-dom is also given by next.js
+- loader in route tag is used to direct api call to directly fetch data from that api at the event
