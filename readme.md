@@ -246,7 +246,7 @@ import { useParams } from "react-router-dom";
     - Readux-toolkit(RTK) -> redux easier version
 
 #### Define one context
-1. First way
+1. First way : 08 min Context project
 ```js
 import React from "react";
 
@@ -268,4 +268,22 @@ export default UserContext;
 - Login to send data
 - Profile to fetch data
 
-2. Second way
+2. Second way : 09 theme Switch project
+
+```js
+import { createContext, useContext } from "react";
+
+export const ThemeContext = createContext({
+    themeMode: "light",
+    darkTheme: () => {},
+    lightTheme: () => {},
+})
+
+export const ThemeProvider = ThemeContext.Provider
+
+export default function useTheme() {
+    return useContext(ThemeContext)
+}
+```
+- same work but better use, mostly used in company production code
+- add `  darkMode: "class",` in tailwind.config.js
