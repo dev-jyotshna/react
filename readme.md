@@ -232,3 +232,40 @@ import { useParams } from "react-router-dom";
 
 - This optimization given by the react-router-dom is also given by next.js
 - loader in route tag is used to direct api call to directly fetch data from that api at the event
+
+### Context API
+
+- In early react, even though a component does not need some data using props, the data will pass through that component just because its inner components needs that data. 
+![alt text](<context api use.png>)
+
+- solution is that the card inner component takes data directly through a global component : **prop drilling**
+- Context API only within React -> library for state management
+- Redux for solving this problem outside of react -> purpose state management = data pass
+- Redux -> library for state management
+    - react-Redux -> redux use in react
+    - Readux-toolkit(RTK) -> redux easier version
+
+#### Define one context
+1. First way
+```js
+import React from "react";
+
+const UserContext = React.createContext()
+
+export default UserContext;
+```
+- context is a variable provider
+- when context is used as a wrapper it becomes a provider(gets access to the userContext => likegrobal variable)
+```js
+<UserContext>
+<Login />
+<Card>
+    <Data />
+</Card>
+<UserContext/>
+```
+
+- Login to send data
+- Profile to fetch data
+
+2. Second way
