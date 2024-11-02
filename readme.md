@@ -286,4 +286,73 @@ export default function useTheme() {
 }
 ```
 - same work but better use, mostly used in company production code
-- add `  darkMode: "class",` in tailwind.config.js
+- add `darkMode: "class",` in tailwind.config.js
+
+### todo app context
+- create context, context.provider 
+
+### Redux
+- Redux is an independent state management library
+- react-redux is used as a bridge to use redux in react.
+- Flux is older version to support legacy code. Stronger point is its data flow
+- you should never modify your state directly instead use functionality reducers/functions to modify the state.
+- Problem faced with redux was its set up was really complicated, so redux-toolkit was formed.
+- Store used a global variable => Single source of truth
+- Reducers : updation in store only happes through reducers(object)
+- Methods : useSelector & useDispatch
+- Use [redux tookit use guide](https://redux-toolkit.js.org/introduction/getting-started) in react app
+- make configureStore in src>app>store.js
+- make object in createSlice in src>features>todo>todoSlice.js
+```js
+//Slice or reducer
+import {createSlice, nanoid} from '@reduxjs/toolkit';
+
+const initialState = {
+    todos: [{id: 1, text: "Hello"}]
+}
+
+
+export const todoSlice = createSlice({
+    name: 'todo',
+    initialState,
+    reducers: {
+        addTodo: (state, action) => {
+            const todo = {
+                id: nanoid(),
+                text: action.payload
+            }
+            state.todos.push(todo)
+        },
+        removeTodo: (state, action) => {
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload)
+        },
+        updateTodo: (state, action) => {
+            if(state.todos.id === action.payload.id){
+                state.todos.text = action.payload.text
+            }
+        }
+    }
+})
+
+export const {addTodo, removeTodo, updateTodo} = todoSlice.actions
+export default todoSlice.reducer
+```
+- reducers have object with property and function
+    - addTodo will always have access of state and action 
+    - state -> for getting the current state
+    - action -> get to something needed to do some work. ex: getting todoid for removeTodo function 
+- set access of the in src>app>store.js
+- use dispatcher to add AddTodo todo in the store
+- useDispatch makes changes in store using reducers
+
+SUMMARY
+- make store -> configureStore
+- make reducers using feuture> createSlice
+    - name, initialState, reducers- function: state, action
+    - export reducers
+    - export slicereducer
+- make store access the reducers
+- make components -> send or receive values
+    - sending values useDispatch > import reducer > send reducer using dispatch
+    - receiving values useSelector using a particular state
+    - use values in components to display
