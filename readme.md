@@ -356,3 +356,23 @@ SUMMARY
     - sending values useDispatch > import reducer > send reducer using dispatch
     - receiving values useSelector using a particular state
     - use values in components to display
+
+### Mega Blog project
+Tech stack : react, appwrite -> Backend as a service & open-source, tinyMCE, html-react-parser library for content of the article parsing, react hook forms to better handle forms
+- package.json dependencies > rtk, redux, react-router-dom, appwrite, react-html-parser, tinyMCE, react hook form
+
+#### Environment variable
+- to not send client id and some system secrets to be deployed, as react is a front-end library, everything written in js will be shipped to the browser, there are some variable called system variables, they are stored differently and when the app is deployed to vercel , aws or netlify, their secret manager manages these variables and use the id & password as it is in there.
+- this file named ".env" will be added to .gitignore for safe keeping the ids and api-keys etc.
+- env variable must be made in the root of the app(hoem directory of the app)
+- environment variable file is usually defines in process -> process.env.REACT_APP_....
+- env var is always starts with REACT_APP_.... when making react app with create react app 
+- enc var for vite processed code uses naming conventions -> VITE_SOME_KEY
+- access to the env var will be as -> import.meta.env.VITE_SOME_KEY
+
+- Set up appwrite with all the things needed for the backen dof our project
+- make a new js file src>conf>conf.js -> with alias variables to import all the env var in String type-cast to decrease the chances of getting id type issues
+
+#### Prevent vendor lock-In
+- Concept of services that is a class is introduced.
+- use method that will be implemented in them
