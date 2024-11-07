@@ -376,3 +376,4 @@ Tech stack : react, appwrite -> Backend as a service & open-source, tinyMCE, htm
 #### Prevent vendor lock-In
 - Concept of services that is a class is introduced.
 - use method that will be implemented in them
+- Query can only be used if indexes is made in appwrte databases
