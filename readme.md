@@ -381,3 +381,6 @@ Tech stack : react, appwrite -> Backend as a service & open-source, tinyMCE, htm
 
 #### Production grade react components
 [forwardref react hook](https://react.dev/reference/react/forwardRef)
+
+- purpose of using navigate instead of Link is that navigate automatically sends user to the destination and link needs to be clicked manually to get to the destination
+- made components poastcard, login , signup, select, authLayout (conainer to maade auth secure: protected container)
