@@ -12,6 +12,7 @@ export default function RTE({name, control, label, defaultValue = ""}) {
         control={control}
         render={({field: {onChange}}) => (
             <Editor 
+            apiKey='s0qamqhqliav7vynaqeita5wptnrbte230359voc5jo4wnqb'
             initialValue={defaultValue}
             init={{
                 initialValue: defaultValue,
@@ -38,12 +39,12 @@ export default function RTE({name, control, label, defaultValue = ""}) {
                     "help",
                     "wordcount",
                     "anchor",
-                    ],
-                toolbar: "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                  ],
+                toolbar: "undo redo print | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
                 content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}
-            />
+          />
         )}
         />
     </div>
