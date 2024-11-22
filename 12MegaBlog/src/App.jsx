@@ -33,7 +33,6 @@ function App() {
         </main>
         <Footer />
       </div>
-      <h1>no Loading</h1>
     </div>
   ) : null
 }
